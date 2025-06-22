@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mouse Position Tracker</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    #coords {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Move your mouse anywhere to see the coordinates</h2>
+  <div id="coords">X: -, Y: -</div>
+
+  <script>
+    const coords = document.getElementById('coords');
+
+    document.addEventListener('mousemove', function(event) {
+      const x = event.clientX;
+      const y = event.clientY;
+      coords.textContent = `X: ${x}, Y: ${y}`;
+    });
+  </script>
+
+</body>
+</html>
+
